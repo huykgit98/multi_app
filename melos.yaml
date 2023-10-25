@@ -7,8 +7,23 @@ packages:
 scripts:
   analyze:
     exec: dart analyze .
+
   generate-run-config:
     run: bash generate_app_run_config.sh
+
+  # build runner build
+  build_all:
+    run: dart pub global run melos exec --depends-on="build_runner" "flutter packages pub run build_runner build"
+    description: build_runner build all modules.
+
+  # build runner build --delete-conflicting-outputs
+  force_build_all:
+    run: dart pub global run melos exec --depends-on="build_runner" "flutter packages pub run build_runner build --delete-conflicting-outputs"
+    description: build_runner build all modules.
+
+  l10n:
+    run: dart pub global run melos exec --fail-fast --scope="*resources*" --flutter -- flutter pub run intl_utils:generate
+    description: Generates l10n for all app packages.
 
 command:
   bootstrap:
