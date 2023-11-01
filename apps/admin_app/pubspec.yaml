@@ -23,6 +23,8 @@ dependencies:
   fpdart: ^1.1.0
   bloc_concurrency: ^0.2.2
   stream_transform: ^2.1.0
+  flutter_dotenv: ^5.1.0
+
 
   #local packages (located in packages folder)
   domain: ^0.1.0+1

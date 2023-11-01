@@ -2,21 +2,22 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 
-/// A custom [BlocObserver] for observing and tracking BLoC events, transitions, and errors
-/// in the Flutter application.
-///
-/// This observer allows you to monitor the behavior of BLoCs throughout your app,
-/// providing visibility into state changes, transitions, and errors.
-///
-/// Example usage:
-/// ```dart
-/// void main() {
-///   Bloc.observer = AppBlocObserver();
-///   runApp(MyApp());
-/// }
-/// ```
+/// A custom [BlocObserver] for observing and tracking BLoC events, transitions,
+/// and errors in the Flutter application.
 class AppBlocObserver extends BlocObserver {
-  /// Creates an instance of [AppBlocObserver].
+  /// A custom [BlocObserver] for observing and tracking BLoC events,
+  /// transitions and errors in the Flutter application.
+  ///
+  /// This observer allows you to monitor the behavior of BLoCs throughout your app,
+  /// providing visibility into state changes, transitions, and errors.
+  ///
+  /// Example usage:
+  /// ```dart
+  /// void main() {
+  ///   Bloc.observer = AppBlocObserver();
+  ///   runApp(MyApp());
+  /// }
+  /// ```
   const AppBlocObserver();
 
   @override
