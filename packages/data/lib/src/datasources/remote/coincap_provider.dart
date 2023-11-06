@@ -11,5 +11,5 @@ abstract class CoinCapProvider {
   factory CoinCapProvider(Dio dio, {String baseUrl}) = _CoinCapProvider;
 
   @GET('/assets')
-  Future<CompanyOverviewModel> getAssets();
+  Future<AssetListModel> getAssets();
 }
