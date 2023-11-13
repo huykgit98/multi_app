@@ -8,14 +8,12 @@ import 'package:injectable/injectable.dart';
 
 import 'injection_container.config.dart' as config;
 
-final getIt = GetIt.instance;
-
 @InjectableInit(
   initializerName: r'$initGetIt',
   preferRelativeImports: true,
   asExtension: false,
 )
-Future<void> configureDependencies() => $initGetIt(getIt);
+Future<void> configureDependencies(GetIt getIt) => $initGetIt(getIt);
 
 Future<void> $initGetIt(GetIt getIt) async {
   var alphavantageBaseUrl = 'https://www.alphavantage.co/';

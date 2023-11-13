@@ -7,6 +7,9 @@ class GetCompanyOverviewUseCase {
 
   final CryptoCurrenciesRepository _repository;
 
-  Future<CompanyOverviewEntity> call(int id) =>
-      _repository.getCompanyOverview(apikey: '', symbol: '');
+  Future<CompanyOverviewEntity> call({
+    required String apikey,
+    required String symbol,
+  }) =>
+      _repository.getCompanyOverview(apikey: apikey, symbol: symbol);
 }

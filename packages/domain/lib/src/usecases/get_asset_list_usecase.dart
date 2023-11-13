@@ -7,5 +7,5 @@ class GetAssetListUseCase {
 
   final StocksRepository _repository;
 
-  Future<AssetListEntity> call(int id) => _repository.getAssets();
+  Future<AssetListEntity> call() => _repository.getAssets();
 }

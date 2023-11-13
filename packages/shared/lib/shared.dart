@@ -14,6 +14,8 @@ export 'src/common/screens/screens.dart';
 export 'src/common/widgets/widgets.dart';
 //Configurations
 export 'src/config/config.dart';
+//Di
+export 'src/di/injection_container.dart' show configureDependencies;
 //Resources
 export 'src/resources/resources.dart';
 //Utilities

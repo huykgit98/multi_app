@@ -2,7 +2,6 @@ import 'package:client_1/home/home.dart';
 import 'package:client_1/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/http.dart' as http;
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,8 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          HomePageBloc(httpClient: http.Client())..add(PostFetched()),
+      create: (_) => HomePageBloc()..add(PostFetched()),
       child: const HomePageView(),
     );
   }
