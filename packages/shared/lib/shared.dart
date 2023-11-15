@@ -10,6 +10,8 @@ export 'src/base_blocs/base_state.dart';
 export 'src/base_layouts/layouts.dart';
 //Common screens
 export 'src/common/screens/screens.dart';
+//Common theme
+export 'src/common/theme/theme.dart';
 //Common widgets
 export 'src/common/widgets/widgets.dart';
 //Configurations

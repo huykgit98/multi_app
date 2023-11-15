@@ -1,7 +1,9 @@
 import 'package:data/src/dto_models/dto_models.dart';
 import 'package:data/src/mappers/base.dart';
 import 'package:domain/domain.dart';
+import 'package:injectable/injectable.dart';
 
+@Injectable()
 class AssetListMapper extends Mapper<AssetListModel, AssetListEntity> {
   /// Converts [AssetListEntity] to an instance of [AssetListModel]
   @override

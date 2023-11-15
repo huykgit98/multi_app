@@ -1,7 +1,9 @@
 import 'package:data/src/dto_models/dto_models.dart';
 import 'package:data/src/mappers/base.dart';
 import 'package:domain/domain.dart';
+import 'package:injectable/injectable.dart';
 
+@Injectable()
 class CompanyOverviewMapper
     extends Mapper<CompanyOverviewModel, CompanyOverviewEntity> {
   /// Converts [CompanyOverviewEntity] to an instance of [CompanyOverviewModel]

@@ -1,3 +1,4 @@
+import 'package:client_1/di/injection_container.dart';
 import 'package:client_1/home/home.dart';
 import 'package:client_1/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => HomePageBloc()..add(PostFetched()),
+      create: (_) => getIt<HomePageBloc>()..add(PostFetched()),
       child: const HomePageView(),
     );
   }

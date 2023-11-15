@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
-import 'package:client_1/di/injection_container.dart';
 import 'package:client_1/home/home.dart';
 import 'package:domain/domain.dart';
 import 'package:equatable/equatable.dart';
@@ -21,14 +20,15 @@ EventTransformer<E> throttleDroppable<E>(Duration duration) {
 
 @Injectable()
 class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
-  HomePageBloc() : super(const HomePageState()) {
+  HomePageBloc({required this.getAssetListUseCase})
+      : super(const HomePageState()) {
     on<PostFetched>(
       _onPostFetched,
       transformer: throttleDroppable(throttleDuration),
     );
   }
 
-  final GetAssetListUseCase _getAssetListUseCase = getIt<GetAssetListUseCase>();
+  final GetAssetListUseCase getAssetListUseCase;
 
   Future<void> _onPostFetched(
     PostFetched event,
@@ -62,7 +62,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   }
 
   Future<List<Post>> _fetchPosts([int startIndex = 0]) async {
-    final assetList = await _getAssetListUseCase.call();
+    final assetList = await getAssetListUseCase.call();
     print('HUYHUY assetList ${assetList.data.length}');
     return [];
     // final response = await httpClient.get(
